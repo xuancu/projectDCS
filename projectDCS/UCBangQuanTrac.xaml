@@ -1,0 +1,228 @@
+﻿<UserControl x:Class="projectDCS.UCBangQuanTrac"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projectDCS"
+             mc:Ignorable="d" 
+             d:DesignHeight="670" d:DesignWidth="1220"
+             
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+            TextElement.FontWeight="Regular"
+            TextElement.FontSize="13"
+            TextOptions.TextFormattingMode="Ideal"
+            TextOptions.TextRenderingMode="Auto"
+            Background="White"
+            FontFamily="{DynamicResource MaterialDesignFont}" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <Grid Grid.Column="0">
+            <materialDesign:Card Margin="20 10 10 10">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="khanhhoa.jpg" Stretch="UniformToFill" Opacity=".2"/>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="550"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid Margin="60">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="420"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock HorizontalAlignment="Center" Margin="0 3 0 0"><Bold>ĐẦU HẦM PHÍA KHÁNH HÒA</Bold></TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="1" Margin="30 2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="220"></ColumnDefinition>
+                                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tổng lượng mưa một giờ vừa qua:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tổng lượng mưa liên tục:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Có mưa:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Nhiệt độ hiện tại:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tốc độ gió hiện tại:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Hướng gió hiện tại:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tầm nhìn hiện tại:</TextBlock>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <!-- Chỗ này đặt giá trị của các thông số trên-->
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TongLuongMuaMotGioQua_KhanhHoa" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TongLuongMuaLienTuc_KhanhHoa" FontWeight="Bold"  Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="CoMua_KhanhHoa" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="NhietDoHienTai_KhanhHoa" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TocDoGioHienTai_KhanhHoa" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="HuongGioHienTai_KhanhHoa" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TamNhinHienTai_KhanhHoa" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid Grid.Row="1">
+                            <Image x:Name="trangthaithoitiet_khanhhoa" Source="logo.png" Width="50" Height="50"></Image>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </materialDesign:Card>
+        </Grid>
+        <Grid Grid.Column="1">
+                <materialDesign:Card Margin="10 10 20 10">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush ImageSource="phuyen.jpg" Stretch="UniformToFill" Opacity=".2"/>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="550"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid Margin="60">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="25"/>
+                                <RowDefinition Height="420"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock HorizontalAlignment="Center" Margin="0 3 0 0"><Bold>ĐẦU HẦM PHÍA PHÚ YÊN</Bold></TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="1" Margin="30 2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="220"></ColumnDefinition>
+                                    <ColumnDefinition></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tổng lượng mưa một giờ vừa qua:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tổng lượng mưa liên tục:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Có mưa:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Nhiệt độ hiện tại:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tốc độ gió hiện tại:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Hướng gió hiện tại:</TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center">Tầm nhìn hiện tại:</TextBlock>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <!-- Chỗ này đặt giá trị của các thông số trên-->
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                        <RowDefinition Height="52"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TongLuongMuaMotGioQua_PhuYen" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TongLuongMuaLienTuc_PhuYen" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="CoMua_PhuYen" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="NhietDoHienTai_PhuYen" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TocDoGioHienTai_PhuYen" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="HuongGioHienTai_PhuYen" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" x:Name="TamNhinHienTai_PhuYen" FontWeight="Bold" Foreground="Black"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Image x:Name="trangthaithoitiet_phuyen" Source="logo.png" Width="50" Height="50"></Image>
+                    </Grid>
+                </Grid>
+                </materialDesign:Card>
+            </Grid>
+
+    </Grid>
+</UserControl>

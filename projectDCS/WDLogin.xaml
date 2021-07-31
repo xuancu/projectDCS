@@ -1,0 +1,81 @@
+﻿<Window x:Class="projectDCS.WDLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projectDCS"
+        mc:Ignorable="d"
+        
+        Title="Đăng nhập" Height="360" Width="640"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="#33CCFF">
+        <materialDesign:Card Margin="1" Background="LightGray">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="150"/>
+                        <RowDefinition/>
+                        
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Image Source="logo.png" Stretch="Uniform" VerticalAlignment="Bottom" Margin="20"></Image>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <TextBlock HorizontalAlignment="Center" Padding="20"><Bold> HỆ THỐNG QUAN TRẮC KHÍ TƯỢNG</Bold></TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Padding="40"><Bold> HẦM ĐƯỜNG BỘ</Bold></TextBlock>
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <Grid Margin="10 70">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBox x:Name="tb_TaiKhoan"  materialDesign:HintAssist.Hint="Tên đăng nhập" HorizontalAlignment="Center" VerticalAlignment="Center" Width="270">
+                            </TextBox>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <PasswordBox x:Name="tb_MatKhau" materialDesign:HintAssist.Hint="Mật khẩu"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="270"/>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Button Width="120" Click="btn_Login_click" Background="#5BBD2B">
+                                    Đăng nhập
+                                </Button>
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <Button Width="120" Click="btn_Thoat_click" Background="#F1AF00">
+                                    Thoát
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+</Window>

@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="projectDCS.ThemUserMoi"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:projectDCS"
+             mc:Ignorable="d" 
+             d:DesignHeight="710" d:DesignWidth="1080"
+             
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="White"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition/> <!-- Tên đăng nhập-->
+            <RowDefinition/> <!-- Mật khẩu -->
+            <RowDefinition/> <!-- CBB nhóm user -->
+            <RowDefinition/> <!-- Họ tên -->
+            <RowDefinition/> <!-- Số điện thoại -->
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="250"/> <!-- Các quyền được phép -->
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20">Tên đăng nhập :</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBox x:Name="tendangnhap" materialDesign:HintAssist.Hint="Nhập tên đăng nhập" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" Width="200">
+                </TextBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20">Mật khẩu :</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <PasswordBox x:Name="matkhau" materialDesign:HintAssist.Hint="Nhập mật khẩu" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20 0" Width="200" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20 0">Nhóm User :</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <ComboBox x:Name="nhomuser" materialDesign:HintAssist.Hint="Chọn nhóm User" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" Width="200" SelectionChanged="nhomuser_SelectionChanged">
+                    <ComboBoxItem>
+                        Administrator
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        Moderator
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        User
+                    </ComboBoxItem>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20">Họ tên :</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBox x:Name="hoten" materialDesign:HintAssist.Hint="Nhập họ tên User" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" Width="200">
+                </TextBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="500"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Margin="20"> Số điện thoại :</TextBlock>
+            </Grid>
+            <Grid Grid.Column="1">
+                <TextBox x:Name="sodienthoai" materialDesign:HintAssist.Hint="Nhập số điện thoại User" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0" Width="200">
+                </TextBox>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="5">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Chọn các phân quyền cho user</TextBlock>
+        </Grid>
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <CheckBox   x:Name="taousermoi"
+                                Content="Tạo User Mới"
+                                HorizontalAlignment="Left"
+                                Margin="350 10 10 10"
+                                VerticalAlignment="Center"
+                                />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <CheckBox   x:Name="xoauser"
+                                Content="Xóa User"
+                                HorizontalAlignment="Left"
+                                Margin="350 10 10 10"
+                                VerticalAlignment="Center"
+                                />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <CheckBox   x:Name="phanquyenuser"
+                                Content="Phân quyền cho User"
+                                HorizontalAlignment="Left"
+                                Margin="350 10 10 10"
+                                VerticalAlignment="Center"
+                                />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <CheckBox   x:Name="suathongtinuser"
+                                Content="Sửa thông tin user"
+                                HorizontalAlignment="Left"
+                                Margin="350 10 10 10"
+                                VerticalAlignment="Center"
+                                />
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <CheckBox   x:Name="suathongtinmod"
+                                Content="Sửa thông tin Moderator"
+                                HorizontalAlignment="Left"
+                                Margin="50 10"
+                                VerticalAlignment="Center"
+                                />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <CheckBox   x:Name="tracuucucbo"
+                                Content="Tra cứu DataBase cục bộ"
+                                HorizontalAlignment="Left"
+                                Margin="50 10"
+                                VerticalAlignment="Center"
+                                />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <CheckBox   x:Name="tracuuonline"
+                                Content="Tra cứu DataBase online"
+                                HorizontalAlignment="Left"
+                                Margin="50 10"
+                                VerticalAlignment="Center"
+                                />
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="7">
+            <Button Width="200" Click="btn_apply" Background="#5BBD2B">
+                Hoàn tất
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>
